@@ -1,0 +1,168 @@
+*,*::after,*::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    margin-top:5em;
+    display:grid;
+    place-items: center;
+    transition:height 1s;
+}
+
+.container .hidden:hover span,.container .hidden:focus-within span{
+    display: block;
+}
+
+.container input[type="text"]{
+    width:59ch;
+    height:2em;
+    padding:1em;
+    border:none;
+    border-radius: 10px;
+    background-image:radial-gradient(circle,rgba(32, 178, 171, 0.500),white);
+    /* color:#F4C430; */
+    box-shadow: 0.01em 0.01em 5px whitesmoke;
+}
+
+.container input[type="text"]:focus{
+    outline-color: darksalmon;
+}
+
+.container .hidden span{
+    position: relative;
+    display: none;
+}
+
+.container textarea{position: absolute;
+    width:60ch;
+    height:6em;
+    padding:0.5em;
+    border:none;
+    border-top:2px solid darksalmon;
+    border-top-left-radius:10px ;
+    border-top-right-radius: 10px;
+    box-shadow: 0.01em 0.01em 2px whitesmoke;
+    background-image:radial-gradient(circle,rgba(32, 178, 171, 0.500),white);
+}
+
+.container textarea:focus{
+    outline-color: darksalmon;
+}
+
+
+.content_container{
+    position:relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap:wrap;
+    column-gap:1em;
+    row-gap:1em;
+    margin:10em 2em 0 2em; 
+}
+
+
+
+@media only screen and (max-width:600px){
+    .container{
+        margin-top:3em;
+    }
+    .container input[type="text"]{
+        width:34ch;
+    }
+    .container textarea{
+        width:35ch;
+    }
+    .content_container{
+        width:100%;
+        justify-content: space-around;
+    }
+}
+
+.container .btn{
+    position: absolute;
+    bottom:-95px;
+    right:-20px;
+    padding:0.7em;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: darkcyan;
+    display: inline;
+    color:aqua;
+    transition:transform 500ms;
+    box-shadow:0.01 em 0.01em 2px black;
+    z-index:100;
+}
+
+.container .btn:active{
+    transform:scale(0.75);
+}
+
+.container .btn:hover{
+    background-color: darkgoldenrod;
+    color:white;
+    cursor:pointer;
+}
+
+@media only screen and (max-width:300px){
+    .container{
+        margin-top:3em;
+    }
+    .container input[type="text"]{
+        width:19ch;
+    }
+    .container textarea{
+        width:20ch;
+    }
+    .content_container{
+        width:100%;
+        justify-content: space-around;
+    }
+}
+
+.msg{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0, 0, 0, 0.699);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    row-gap:0.1em;
+    animation:fade 250ms linear;
+}
+
+@keyframes fade {
+    0%{opacity:0}
+    100%{opacity:1}
+}
+
+.msg textarea{
+    width:100%;
+    height:100%;
+    padding:5px;
+    border:1px solid grey;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    text-align: justify;
+}
+
+.msg fieldset{
+    width:50%;
+    color:whitesmoke;
+    border:none;
+    text-align: center;
+    border-top:1px solid lightseagreen;
+    padding:0;
+    margin:0;
+}
+
+.msg :nth-of-type(2){
+    height:10em;
+}
